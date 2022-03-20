@@ -10,9 +10,11 @@ using ContactWebModels;
 using MyContactManagerData;
 using ContactWeb.Models;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactWeb.Controllers
 {
+    [Authorize]
     public class ContactsController : Controller
     {
 
@@ -75,7 +77,7 @@ namespace ContactWeb.Controllers
 
             return View(contact);
         }
-
+        
         // GET: Contacts/Create
         public IActionResult Create()
         {
