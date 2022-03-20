@@ -18,6 +18,7 @@ builder.Services.AddDbContext<MyContactManagerDBContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
@@ -25,7 +26,7 @@ builder.Services.AddScoped<IStatesRepository, StatesRepository>();
 builder.Services.AddScoped<IStatesService, StatesService>();
 builder.Services.AddScoped<IContactsRepository, ContactsRepository>();
 builder.Services.AddScoped<IContactsService, ContactsService>();
-
+builder.Services.AddScoped<IUserRolesService, UserRolesService>();
 
 var app = builder.Build();
 

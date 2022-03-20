@@ -6,9 +6,12 @@ using MyContactManagerData;
 using Microsoft.Extensions.Caching.Memory;
 using ContactWeb.Models;
 using MyContactManagerServices;
+using ContactWeb.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactWeb.Controllers
 {
+    [Authorize(Roles = UserRolesService.ADMIN_ROLE_NAME)]
     public class StatesController : Controller
     {
         // private readonly MyContactManagerDBContext _context;

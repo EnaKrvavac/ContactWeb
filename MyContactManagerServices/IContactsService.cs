@@ -4,11 +4,11 @@ namespace MyContactManagerServices
 {
     public interface IContactsService
     {
-        Task<IList<Contact>> GetAllAsync();
-        Task<Contact?> GetAsync(int id);
-        Task<int> AddOrUpdateAsync(Contact contact);
-        Task<int> DeleteAsync(Contact contact);
-        Task<int> DeleteAsync(int id);
-        Task<bool> ExistsAsync(int id);
+        Task<IList<Contact>> GetAllAsync(string userId);
+        Task<Contact?> GetAsync(int id, string userId);
+        Task<int> AddOrUpdateAsync(Contact contact, string userId);
+        Task<int> DeleteAsync(Contact contact, string userId);
+        Task<int> DeleteAsync(int id, string userId);
+        Task<bool> ExistsAsync(int id, string userId);
     }
 }
