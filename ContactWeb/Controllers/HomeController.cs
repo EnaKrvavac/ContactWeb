@@ -20,7 +20,18 @@ namespace ContactWeb.Controllers
         {
             return View();
         }
-
+        public IActionResult AboutMe()
+        {
+            return View();
+        }
+        public IActionResult Education()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
